@@ -8,8 +8,10 @@ def render_main():
 
 @app.route("/response", methods=['GET', 'POST'])
 def render_response():
-    
-    color = request.args['color']
+    if request.method == 'POST':
+        color = request.forms['color']   
+    else:    
+        color = request.args['color']
     #request object
     #args is = MultiDict (multiple values for one key)
     #The information in args is visible in the url for the page being requested
