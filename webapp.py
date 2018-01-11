@@ -9,7 +9,7 @@ def render_main():
 @app.route("/response", methods=['GET', 'POST'])
 def render_response():
     if request.method == 'POST':
-        color = request.forms['color']   
+        color = request.form['color']   
     else:    
         color = request.args['color']
     #request object
